@@ -1,18 +1,17 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-
 on: [push]
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "Start Build" 
-        - uses: actions/checkout@v2
-        - uses: actions/setup-python@v2
-        - uses: jannekem/run-python-script-action@v1
-          with:
-            script: |
-              import os
-              print("Directory contents:")
-              for f in os.listdir():
-                  print(f)
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Start Build"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            import os
+            print("Directory contents:")
+            for f in os.listdir():
+                print(f)
