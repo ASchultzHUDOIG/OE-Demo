@@ -5,11 +5,11 @@ import re
 
 #Trigger workflow
 
-test_dir=".gitignore/SampleSystem"
+test_dir="SampleSystem"
 piiFound = False
 
 regex_list={
-    #High priority to find SSNs such as 123-45-6789
+    #High priority to find SSNs such as in the format 123-45-6789
     "SSN":re.compile("\d{3}-?\d{2}-?\d{4}"),
     #More complex SSN: ("(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-+(?!0{4})\\d{4}"),
     #This may capture any sequance of 5 numbers
