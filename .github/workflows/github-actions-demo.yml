@@ -13,5 +13,13 @@ jobs:
           script: |
             import os
             print("Directory contents:")
+            regex_list={
+                "SSN":re.compile("\d{3}-?\d{2}-?\d{4}")
+            }
             for f in os.listdir():
                 print(f)
+                for i in regex_list:
+                    for j, line in enumerate(open(f)):
+                        for match in re.finditer(regex_list[i], line):
+                            print("Found  " + i + " in " + fileIn + " on line: " + str(j+1) + " " + match.group() ) #regex_list[i])
+                            return -1
