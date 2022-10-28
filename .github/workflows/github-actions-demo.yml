@@ -22,5 +22,5 @@ jobs:
                 for i in regex_list:
                     for j, line in enumerate(open(f)):
                         for match in re.finditer(regex_list[i], line):
-                            print("Found  " + i + " in " + fileIn + " on line: " + str(j+1) + " " + match.group() ) #regex_list[i])
-                            raise Exception("Found  " + i + " in " + fileIn + " on line: " + str(j+1) + " " + match.group() ) #regex_list[i])
+                            print("Found  " + i + " in " + f + " on line: " + str(j+1) + " " + match.group() ) #regex_list[i])
+                            raise Exception("Found  " + i + " in " + f + " on line: " + str(j+1) + " " + match.group() ) #regex_list[i])
