@@ -19,7 +19,7 @@ jobs:
             }
             for f in os.listdir():
                 print(f)
-                if(os.path.exists(f))
+                if(os.path.exists(f)):
                     for i in regex_list:
                         for j, line in enumerate(open(f)):
                             for match in re.finditer(regex_list[i], line):
